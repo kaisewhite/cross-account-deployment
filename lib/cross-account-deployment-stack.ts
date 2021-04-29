@@ -1,5 +1,7 @@
 import * as cdk from "@aws-cdk/core";
 import { PipelineStack } from "../resources/pipeline_resources/pipelines";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export class CrossAccountDeploymentStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -9,8 +11,8 @@ export class CrossAccountDeploymentStack extends cdk.Stack {
 
     new PipelineStack(app, "cdk-infra-pipeline-stack", {
       env: {
-        account: "936867263904", //Gov Cloud Moderate Account Number
-        region: "us-gov-west-1",
+        account: process.env.CDK_DEFAULT_ACCOUNT, //This should be the main account you want the pipeline to live in
+        region: process.env.CDK_DEFAULT_REGION,
       },
     });
   }
