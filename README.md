@@ -10,7 +10,15 @@ In this example, the pipeline is provisioned on adevelopment account, and deploy
 2. Open a new terminal and from the root folder run: `npm install -g aws-cdk && npm install`
 3. Open `bootstrap.sh` and then update the account numbers and region with your own account info.
 4. Open a new terminal. From the root of the project run: `sh bootstrap.sh` (Note that you have to bootstrap all environments before you deploy the pipeline).
-5. Deploy
+5. Navigate to `.env` and update the Default Account and Region.
+6. Navigate to `resources/pipeline_resources/pipelines.ts` and create/update the sandbox and production account numbers/regions.
+
+   ```
+   const sandboxAccount = { account: "************", region: "us-gov-west-1" };
+   const prodAccount = { account: "************", region: "us-gov-west-1" };
+   ```
+
+7. Deploy the pipeline stack: `cdk deploy cdk-infra-pipeline-stack --profile AWS Profile`
 
 The CDK consists of the following stacks:
 

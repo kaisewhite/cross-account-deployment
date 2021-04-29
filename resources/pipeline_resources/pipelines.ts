@@ -6,12 +6,17 @@ import * as codecommit from "@aws-cdk/aws-codecommit";
 import * as iam from "@aws-cdk/aws-iam";
 import * as ec2 from "@aws-cdk/aws-ec2";
 
+const app = new App();
+
 /**
  * Import Stages
  */
 import { SandboxApplicationStage, ProdApplicationStage } from "../pipeline_resources/stages";
 
-const app = new App();
+/**
+ * Define Accounts
+ */
+
 const sandboxAccount = { account: "************", region: "us-gov-west-1" };
 const prodAccount = { account: "************", region: "us-gov-west-1" };
 
