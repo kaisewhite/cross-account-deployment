@@ -4,7 +4,7 @@ This is an example of a CodePipeline cross-account CI/CD pipeline. The pipeline 
 sample S3 Bucket and to build a CloudFormation template for our application.Moreover, the pipeline uses CodeDeploy to deploy the sample application.
 In this example, the pipeline is provisioned on adevelopment account, and deploys the sample application on a production account and a sandbox account
 
-# STEPS
+## STEPS
 
 1. Clone this repo `git clone codecommit://AWS_PROFILE@REPOSITORY_NAME`
 2. Open a new terminal and from the root folder run: `npm install -g aws-cdk && npm install`
@@ -38,7 +38,7 @@ The CDK consists of the following stacks:
 - `cdk synth` emits the synthesized CloudFormation template
 - `cdk synth --profile AWS_PROFILE && cdk deploy --profile AWS_PROFILE --all --require-approval never`
 
-# COMMON ERRORS
+## COMMON ERRORS
 
 #### Key: Policy contains a statement with one or more invalid principals
 
