@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 npx cdk bootstrap \
- --profile jacobs \
+ --profile <AWS_PROFILE_NAME> \
  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
- --trust 936867263904 \
- aws://936867263904/us-gov-west-1
+ aws://<MAIN_ACCOUNT_NUMBER>/<REGION>
 
 npx cdk bootstrap \
- --profile jacobs_sandbox \
+ --profile <AWS_PROFILE_NAME> \
  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
- --trust 936867263904 \
- aws://111055882567/us-gov-west-1
+ --trust <MAIN_ACCOUNT_NUMBER_FROM_ABOVE> \
+ aws://<SANDBOX_ACCOUNT_NUMBER>/<REGION>
