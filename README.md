@@ -19,6 +19,7 @@ In this example, the pipeline is provisioned on adevelopment account, and deploy
    ```
 
 7. Deploy the pipeline stack: `cdk deploy cdk-infra-pipeline-stack --profile AWS Profile`
+8. Since the Pipeline is self-mutating, all you need to do going forward is push your changes to the git repository `git push`
 
 The CDK consists of the following stacks:
 
