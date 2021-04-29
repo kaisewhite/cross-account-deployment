@@ -6,20 +6,21 @@ In this example, the pipeline is provisioned on adevelopment account, and deploy
 
 ## STEPS
 
-1. Clone this repo `git clone codecommit://AWS_PROFILE@REPOSITORY_NAME`
-2. Open a new terminal and from the root folder run: `npm install -g aws-cdk && npm install`
-3. Open `bootstrap.sh` and then update the account numbers and region with your own account info.
-4. Open a new terminal. From the root of the project run: `sh bootstrap.sh` (Note that you have to bootstrap all environments before you deploy the pipeline).
-5. Navigate to `.env` and update the Default Account and Region.
-6. Navigate to `resources/pipeline_resources/pipelines.ts` and create/update the sandbox and production account numbers/regions.
+1. Create a new codecommit repository in AWS then then clone the repo: `git clone codecommit://AWS_PROFILE@REPOSITORY_NAME`
+2. Copy this repo into the the new codecommit repo.
+3. Open a new terminal and from the root folder run: `npm install -g aws-cdk && npm install`
+4. Open `bootstrap.sh` and then update the account numbers and region with your own account info.
+5. Open a new terminal. From the root of the project run: `sh bootstrap.sh` (Note that you have to bootstrap all environments before you deploy the pipeline).
+6. Navigate to `.env` and update the Default Account and Region.
+7. Navigate to `resources/pipeline_resources/pipelines.ts` and create/update the sandbox and production account numbers/regions.
 
    ```
    const sandboxAccount = { account: "************", region: "us-gov-west-1" };
    const prodAccount = { account: "************", region: "us-gov-west-1" };
    ```
 
-7. Deploy the pipeline stack: `cdk deploy cdk-infra-pipeline-stack --profile AWS Profile`
-8. Since the Pipeline is self-mutating, all you need to do going forward is push your changes to the git repository `git push`
+8. Deploy the pipeline stack: `cdk deploy cdk-infra-pipeline-stack --profile AWS Profile`
+9. Since the Pipeline is self-mutating, all you need to do going forward is push your changes to the git repository `git push`
 
 The CDK consists of the following stacks:
 
