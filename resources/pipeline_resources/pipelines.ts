@@ -55,6 +55,7 @@ export class PipelineStack extends Stack {
 
       synthAction: SimpleSynthAction.standardNpmSynth({
         projectName: "cdk-infra-pipeline",
+        environment: { privileged: true },
         sourceArtifact,
         cloudAssemblyArtifact,
         installCommand: "npm install -g aws-cdk",
